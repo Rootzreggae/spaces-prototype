@@ -1,0 +1,131 @@
+/* ── Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Typography ──────────────────────────────────────────── */
+  --dt-font-display: 'Outfit', -apple-system, sans-serif;
+  --dt-font-body: 'Outfit', -apple-system, sans-serif;
+  --dt-font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* ── Surfaces ────────────────────────────────────────────── */
+  --dt-bg-void:      #0b0d0f;   /* sidebar only */
+  --dt-bg-base:      #14171a;   /* page body / main content */
+  --dt-bg-surface:   #1c2024;   /* cards, panels */
+  --dt-bg-raised:    #252a2f;   /* inputs, elevated surfaces */
+  --dt-bg-overlay:   #2f353c;   /* popovers, dropdowns */
+
+  /* ── Borders ─────────────────────────────────────────────── */
+  --dt-border-subtle:  #1e2328;
+  --dt-border-default: #2d3339;
+  --dt-border-strong:  #3a4149;
+  --dt-border-focus:   #1496ff;
+
+  /* ── Text ────────────────────────────────────────────────── */
+  --dt-text-primary:   #ffffff;
+  --dt-text-secondary: #b4bcc4;
+  --dt-text-muted:     #6c757d;
+  --dt-text-faint:     #454d5a;
+
+  /* ── Brand / Accent ──────────────────────────────────────── */
+  --dt-accent:         #1496ff;   /* Dynatrace blue */
+  --dt-accent-hover:   #3eaaff;
+  --dt-accent-subtle:  rgba(20, 150, 255, 0.10);
+  --dt-accent-medium:  rgba(20, 150, 255, 0.18);
+
+  /* ── Semantic ────────────────────────────────────────────── */
+  --dt-success:        #22c55e;
+  --dt-success-subtle: rgba(34, 197, 94, 0.10);
+  --dt-warning:        #f59e0b;
+  --dt-warning-subtle: rgba(245, 158, 11, 0.10);
+  --dt-error:          #ef4444;
+  --dt-error-subtle:   rgba(239, 68, 68, 0.10);
+
+  /* ── Environment Colors ──────────────────────────────────── */
+  --dt-env-production:  #22c55e;
+  --dt-env-staging:     #f59e0b;
+  --dt-env-development: #1496ff;
+
+  /* ── Radii ───────────────────────────────────────────────── */
+  --dt-radius-sm:  4px;
+  --dt-radius-md:  8px;
+  --dt-radius-lg:  12px;
+  --dt-radius-xl:  16px;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --dt-shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.3);
+  --dt-shadow-md:   0 4px 16px rgba(0, 0, 0, 0.35);
+  --dt-shadow-lg:   0 12px 48px rgba(0, 0, 0, 0.5);
+  --dt-shadow-glow: 0 0 24px rgba(20, 150, 255, 0.15);
+
+  /* ── Transitions ─────────────────────────────────────────── */
+  --dt-ease:    cubic-bezier(0.4, 0, 0.2, 1);
+  --dt-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --dt-duration-fast: 120ms;
+  --dt-duration-base: 200ms;
+  --dt-duration-slow: 350ms;
+}
+
+/* ── Base Reset ────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--dt-bg-base);
+  color: var(--dt-text-primary);
+  font-family: var(--dt-font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: var(--dt-accent);
+  color: #000;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--dt-border-default); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--dt-border-strong); }
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
