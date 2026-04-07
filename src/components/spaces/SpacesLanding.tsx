@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useApp } from '../../context/AppContext'
 import { practitionerSpaces, spaceSegments } from '../../data/mock-data'
-import type { PractitionerSpace, Segment } from '../../data/mock-data'
+import type { PractitionerSpace } from '../../data/mock-data'
 
 export function SpacesLanding() {
   const { state, hasSpaces } = useApp()

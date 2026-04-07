@@ -3,7 +3,7 @@ import { useState, useCallback, useRef } from 'react'
 export function useToast() {
   const [message, setMessage] = useState('')
   const [visible, setVisible] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(null)
 
   const showToast = useCallback((msg: string) => {
     if (timerRef.current) clearTimeout(timerRef.current)
